@@ -102,7 +102,6 @@ int main()
 
 	if (startstarlevel == 0 || wantstarlevel == 0)
 	{
-
 		return 0;
 	}
 
@@ -115,18 +114,18 @@ int main()
 			if (memorypiece > 20)
 			{
 				Goddess_jewelry++;
-				if (memorypiece > 40)
-				{
-					Goddess_jewelry++;
-					if (memorypiece > 60)
+					if (memorypiece > 40)
 					{
 						Goddess_jewelry++;
-						if (memorypiece > 80)
+						if (memorypiece > 60)
 						{
 							Goddess_jewelry++;
+							if (memorypiece > 80)
+							{
+								Goddess_jewelry++;
+							}
 						}
 					}
-				}
 			}
 	}
 
