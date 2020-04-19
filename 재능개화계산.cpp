@@ -76,8 +76,6 @@ int main()
 	case 4: //4-5
 		max_memorypiece = 150;
 		break;
-	default:
-		break;
 	}
 
 	if (startstarlevel == 1 && wantstarlevel == 3)
@@ -107,11 +105,6 @@ int main()
 		max_memorypiece += 150;
 	}
 
-	if (startstarlevel == 0 || wantstarlevel == 0)
-	{
-		return 0;
-	}
-
 	max_memorypiece -= have_memorypice;
 
 	while (memorypiece < max_memorypiece)
@@ -136,5 +129,5 @@ int main()
 			}
 	}
 
-	cout << endl << "필요한 여신의 보석개수" << endl << Goddess_jewelry << endl << "필요한메모리피스" << endl << memorypiece;
+	cout << endl << "필요한 여신의보석 갯수 : " << Goddess_jewelry << endl << "필요한 메모리피스 : " << memorypiece;
 }
