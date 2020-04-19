@@ -18,7 +18,8 @@ int main()
 		{
 			cout << "숫자만 입력해주세요." << endl;
 			cin.clear();
-			cin.ignore(20, '\n');
+			cin.ignore(20, '\n');		
+			continue;
 		}
 
 		cout << "달성할 최종 별을 입력" << endl; cin >> wantstarlevel;
@@ -27,6 +28,7 @@ int main()
 			cout << "숫자만 입력해주세요." << endl;
 			cin.clear();
 			cin.ignore(20, '\n');
+			continue;
 		}
 
 		cout << "가지고있는 해당 캐릭터의 메모리피스의 개수를 입력" << endl; cin >> have_memorypice;
@@ -37,7 +39,12 @@ int main()
 			cin.ignore(20, '\n');
 		}
 
-		if (startstarlevel <= 0 || wantstarlevel <= 0)
+		if (startstarlevel > 5 || wantstarlevel > 5)
+		{
+			cout << "최대 별은 5입니다." << endl << "다시입력해주세요." << endl;
+			continue;
+		}
+		else if (startstarlevel <= 0 || wantstarlevel <= 0)
 		{
 			cout << "1보다 작은 수는 입력하실수 없습니다" << endl << "다시입력해주세요" << endl;
 		}
