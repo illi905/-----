@@ -1,5 +1,7 @@
-﻿#include <stdio.h>
+﻿#include "pch.h"
+#include <stdio.h>
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 int main()
@@ -18,7 +20,7 @@ int main()
 		{
 			cout << "숫자만 입력해주세요." << endl;
 			cin.clear();
-			cin.ignore(20, '\n');		
+			cin.ignore(20, '\n');
 			continue;
 		}
 
@@ -57,11 +59,11 @@ int main()
 			cout << "달성할별과 현재별이 같습니다" << endl << "다시입력해주세요." << endl;
 		}
 		if (startstarlevel >= 1 && startstarlevel < wantstarlevel)
-		{		
-			break;		
+		{
+			break;
 		}
 	}
-	
+
 	switch (startstarlevel)
 	{
 	case 1:
@@ -108,26 +110,27 @@ int main()
 	max_memorypiece -= have_memorypice;
 
 	while (memorypiece < max_memorypiece)
-	{		
+	{
 		memorypiece++;
 		Goddess_jewelry++;
-			if (memorypiece > 20)
+		if (memorypiece > 20)
+		{
+			Goddess_jewelry++;
+			if (memorypiece > 40)
 			{
 				Goddess_jewelry++;
-					if (memorypiece > 40)
+				if (memorypiece > 60)
+				{
+					Goddess_jewelry++;
+					if (memorypiece > 80)
 					{
 						Goddess_jewelry++;
-						if (memorypiece > 60)
-						{
-							Goddess_jewelry++;
-							if (memorypiece > 80)
-							{
-								Goddess_jewelry++;
-							}
-						}
 					}
+				}
 			}
+		}
 	}
 
-	cout << endl << "필요한 여신의보석 갯수 : " << Goddess_jewelry << endl << "필요한 메모리피스 : " << memorypiece;
+	cout << endl << "필요한 여신의보석 갯수 : " << Goddess_jewelry << endl << "필요한 메모리피스 : " << memorypiece << endl;
+	system("PAUSE");
 }
