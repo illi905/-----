@@ -6,12 +6,13 @@ using namespace std;
 
 int main()
 {
-	int Goddess_jewelry = 0;
+	int Goddess_jewelry = 0;	
 	int memorypiece = 0;
+	int max_memorypiece = 0;
+	int jewlrycost = 1;
 	int startstarlevel;
 	int wantstarlevel;
 	int have_memorypice;
-	int max_memorypiece;
 
 	while (true)
 	{
@@ -69,14 +70,16 @@ int main()
 	case 1:
 		max_memorypiece = 30;
 		break;
-	case 2: // 2-3
+	case 2: // 2→3
 		max_memorypiece = 100;
 		break;
-	case 3: // 3-4
+	case 3: // 3→4
 		max_memorypiece = 120;
 		break;
-	case 4: //4-5
+	case 4: //4→5
 		max_memorypiece = 150;
+		jewlrycost = 5;
+		cout << "4성 시작은 상점에서 보석을사서 3→4로 개화했다는 가정하에 1피스 = 5보석으로 계산됩니다." << endl;
 		break;
 	}
 
@@ -109,10 +112,19 @@ int main()
 
 	max_memorypiece -= have_memorypice;
 
-	while (memorypiece < max_memorypiece)
+	if (startstarlevel == 4)
 	{
+		while (memorypiece < max_memorypiece)
+		{
+			memorypiece++;
+			Goddess_jewelry += jewlrycost;
+		}
+	}
+
+	while (memorypiece < max_memorypiece)
+	{		
 		memorypiece++;
-		Goddess_jewelry++;
+		Goddess_jewelry++;		
 		if (memorypiece > 20)
 		{
 			Goddess_jewelry++;
@@ -129,7 +141,7 @@ int main()
 				}
 			}
 		}
-	}
+	}	
 
 	cout << endl << "필요한 여신의보석 갯수 : " << Goddess_jewelry << endl << "필요한 메모리피스 : " << memorypiece << endl;
 	system("PAUSE");
