@@ -1,4 +1,3 @@
-﻿#include "pch.h"
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
@@ -10,9 +9,9 @@ int main()
 	int memorypiece = 0;
 	int max_memorypiece = 0;
 	int jewlrycost = 1;
-	int startstarlevel;
-	int wantstarlevel;
-	int have_memorypice;
+	int startstarlevel = 0;
+	int wantstarlevel = 0;
+	int have_memorypice = 0;
 
 	while (true)
 	{
@@ -34,15 +33,7 @@ int main()
 			continue;
 		}
 
-		cout << "가지고있는 해당 캐릭터의 메모리피스의 개수를 입력" << endl; cin >> have_memorypice;
-		if (cin.fail())
-		{
-			cout << "숫자외의 값을 입력했으므로 0개로 계산합니다." << endl;
-			cin.clear();
-			cin.ignore(20, '\n');
-		}
-
-		if (startstarlevel > 5 || wantstarlevel > 5)
+		if (startstarlevel >= 5 || wantstarlevel >= 5)
 		{
 			cout << "최대 별은 5입니다." << endl << "다시입력해주세요." << endl;
 			continue;
@@ -50,19 +41,30 @@ int main()
 		else if (startstarlevel <= 0 || wantstarlevel <= 0)
 		{
 			cout << "1보다 작은 수는 입력하실수 없습니다" << endl << "다시입력해주세요" << endl;
+			continue;
 		}
 		else if (startstarlevel > wantstarlevel)
 		{
 			cout << "달성할별이 현재별보다 작습니다" << endl << "다시입력해주세요." << endl;
+			continue;
 		}
 		else if (startstarlevel >= 1 && wantstarlevel >= 1 && startstarlevel == wantstarlevel)
 		{
 			cout << "달성할별과 현재별이 같습니다" << endl << "다시입력해주세요." << endl;
+			continue;
 		}
 		if (startstarlevel >= 1 && startstarlevel < wantstarlevel)
 		{
 			break;
-		}
+		}		
+	}
+
+	cout << "가지고있는 해당 캐릭터의 메모리피스의 개수를 입력" << endl; cin >> have_memorypice;
+	if (cin.fail())
+	{
+		cout << "숫자외의 값을 입력했으므로 0개로 계산합니다." << endl;
+		cin.clear();
+		cin.ignore(20, '\n');
 	}
 
 	switch (startstarlevel)
